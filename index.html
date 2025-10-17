@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en" id="top">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soluna Yoga Studio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* root variables */
+        :root {
+            --bg: #fffdfb;
+            --surface: #ffffff;
+            --ink: #202122;
+            --muted: #6b6e72;
+            --brand: #2f6ee5;
+            --brand-ink: #ffffff;
+            --accent: #f0e7db;
+            --chip: #eef2ff;
+            --card-shadow: 0 8px 20px rgba(16, 24, 40, .08);
+            --radius: 16px;
+            --radius-lg: 22px;
+            --maxw: 1100px;
+        }
+
+        /* Body + */
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.55;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            border-radius: 12px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header*/
+        header {
+            position: sticky;
+            top: 0;
+            background: #FFF6F0;
+            border-bottom: 1px solid #eee;
+            z-index: 10;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        .brand .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: url(images/soluna\ yoga\ studio.png) center/cover no-repeat;
+            /* background: radial-gradient(circle at 50% 50%, #ffb703 0 55%, #e76f51 56% 100%); */
+            display: inline-block;
+            /* box-shadow: inset 0 0 0 2px #1112, 0 1px 0 #fff8; */
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #3a3b3d;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #111;
+        }
+
+        /* Full background hero image */
+        .hero-bg {
+            position: relative;
+            background: url(images/stephanie-greene-1aB-1s4BIEo-unsplash.jpg) center 70% / cover no-repeat;
+            color: white;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Overlay tint for effect */
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(172, 75, 0, 0.116) 0%, rgba(40, 17, 0, 0.084) 100%);
+        }
+
+        /* Layout container */
+        .hero-content {
+            position: relative;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            z-index: 2;
+            color: #000000;
+            padding: 80px 50px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Text styles */
+        .hero-left h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            margin-bottom: 12px;
+            line-height: 1.15;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.144);
+        }
+
+        .hero-left .lead,
+        .hero-right .lead {
+            color: #171717;
+            font-size: 1rem;
+            max-width: 36ch;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.112);
+        }
+
+        .cta-row {
+            margin-top: 24px;
+        }
+
+
+        /* Buttons (needs work)*/
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border-radius: 999px;
+            padding: 12px 22px;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+
+        .btn.primary {
+            background: linear-gradient(135deg, #f19946, #f77e21);
+            color: #fff;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
+        }
+
+        .btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25);
+            filter: brightness(1.05);
+        }
+
+        /* Secondary = blue (used for “Review Us”) */
+        .btn.secondary {
+            background: #2f6ee5;
+            color: #fff;
+        }
+
+        .btn.secondary:hover {
+            filter: brightness(1.1);
+        }
+
+        /* Neutral */
+        .btn.light {
+            background: #fff;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .btn.light:hover {
+            background: #f6f6f6;
+        }
+
+        /*Responsive tweaks*/
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+                padding: clamp(56px, 12vw, 96px) 20px clamp(90px, 18vw, 140px);
+                /* padding so never collides with rest */
+            }
+
+            .hero-bg {
+                background-position: center 22%;
+            }
+
+            .hero-left .lead,
+            .hero-right .lead {
+                margin-inline: auto;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .hero-left h1 {
+                font-size: clamp(26px, 7.2vw, 34px);
+            }
+
+            .cta-row .btn {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+
+            .hero-bg {
+                background-position: center 18%;
+            }
+        }
+
+
+
+
+        /* Button sizing options (optional use) */
+        .btn.sm {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+
+        .btn.lg {
+            padding: 14px 28px;
+            font-size: 1.05rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .btn.primary {
+            background: var(--brand);
+            color: var(--brand-ink);
+        }
+
+        .btn.primary:hover {
+            filter: brightness(.95);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-left,
+            .hero-right {
+                justify-self: center;
+            }
+
+            .hero-left .lead,
+            .hero-right .lead {
+                margin: 0 auto;
+            }
+        }
+
+        /*Sections */
+        section {
+            padding: 56px 0;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin: 0 0 22px;
+        }
+
+        /* Cards: Featured Classes*/
+        /* The grid should stretch all cards to equal height */
+        .grid-3 {
+            display: grid;
+            gap: 22px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            align-items: stretch;
+        }
+
+        /* Cards become columns that stretch */
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+
+        /* Force all card images to the same visual height */
+        .card>img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 14px 12px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .card-body .btn {
+            margin-top: auto;
+        }
+
+        .card h3 {
+            margin: 6px 0 0;
+            font-size: 1.05rem;
+        }
+
+        .card .muted {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 2px;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .card .btn {
+            margin: 12px auto 4px;
+            width: fit-content;
+            background: #f19946;
+            color: #271a0a;
+        }
+
+        .card .btn:hover {
+            filter: brightness(.95);
+        }
+
+        /* Testimonials */
+        .stars-bar {
+            background: var(--chip);
+            padding: 12px 14px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 18px;
+            box-shadow: 0 1px 0 #eaeefb inset;
+        }
+
+        .stars {
+            font-size: 22px;
+            letter-spacing: 2px;
+        }
+
+        .review-btn {
+            background: #e8ecff;
+            color: #2f3a8a;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .testi-grid {
+            display: grid;
+            gap: 22px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .testi {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--card-shadow);
+            padding: 16px;
+        }
+
+        .testi .name {
+            font-weight: 700;
+        }
+
+        .testi .ago {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .testi p {
+            color: var(--muted);
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(180deg, #f7f2eb, var(--accent));
+            padding: 28px 0 36px;
+            margin-top: 24px;
+            border-top: 1px solid #eee;
+        }
+
+        .foot-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .subline {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .back-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #2f2a1e;
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        /* Back-to-top button layout */
+        .back-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            line-height: 1;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .back-top span {
+            display: grid;
+            place-items: center;
+            line-height: 0;
+        }
+
+        .back-top svg {
+            width: 1.5em;
+            height: 1.5em;
+            display: block;
+            transform: translateY(1px);
+        }
+
+        .back-top svg:hover {
+            transform: translateY(-1px);
+            transition: all 0.25s ease;
+        }
+
+        .back-top svg path {
+            fill: currentColor !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 980px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+            .hero .img-wrap {
+                order: -1;
+            }
+
+            /* image on top for medium/small */
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            /* cards stack */
+            .testi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 18px;
+            }
+
+            .stars-bar {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .foot-row {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav">
+            <div class="brand">
+                <span class="logo" aria-hidden="true"></span>
+                <span>Soluna Yoga Studio</span>
+            </div>
+            <nav aria-label="Primary">
+                <ul>
+                    <li><a href="#classes">Classes</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#join">Join Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-bg" id="about">
+        <div class="hero-overlay">
+            <div class="container hero-content">
+                <div class="hero-left">
+                    <h1>Balance your light<br />and shadow</h1>
+                    <p class="lead">
+                        At Soluna Yoga, we honor both energy and rest — the sun and moon within you.
+                    </p>
+                </div>
+
+                <div class="hero-right">
+                    <p class="lead">
+                        Discover classes that nurture strength, flexibility, and stillness in perfect balance.
+                    </p>
+                    <div class="cta-row">
+                        <a class="btn primary" href="#classes">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Featured Classes -->
+    <section id="classes">
+        <div class="container">
+            <h2 class="section-title">Featured Classes</h2>
+
+            <div class="grid-3">
+                <!-- Card 1 -->
+                <article class="card">
+                    <img src="/images/christopher-campbell-RDPmcgy7Ay4-unsplash.jpg" alt="Hot Yoga">
+                    <div class="card-body">
+                        <h3>Hot Yoga</h3>
+                        <p class="muted">Come get your sweat on</p>
+                        <a href="#join" class="btn">Book a Class</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <img src="images/roxana-popovici-aY5uOJ2o96g-unsplash.jpg" alt="Pilates">
+                    <div class="card-body">
+                        <h3>Pilates</h3>
+                        <p class="muted">A great full body workout</p>
+                        <a href="#join" class="btn">Book a Class</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <img src="images/david-whipple-PktK6GuC3U4-unsplash.jpg" alt="Slow Flow">
+                    <div class="card-body">
+                        <h3>Slow Flow</h3>
+                        <p class="muted">Relax and unwind with us</p>
+                        <a href="#join" class="btn">Book a Class</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section aria-labelledby="testi-heading">
+        <div class="container">
+            <h2 id="testi-heading" class="section-title">Testimonials</h2>
+
+            <div class="stars-bar">
+                <span>Google Reviews</span>
+                <div class="stars" aria-label="5 out of 5 stars">★ ★ ★ ★ ★</div>
+                <a class="review-btn" href="#join">Review Us</a>
+            </div>
+
+            <div class="testi-grid">
+                <article class="testi">
+                    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                        <span class="name">Ashley</span>
+                        <span class="ago">11 days ago</span>
+                    </div>
+                    <p>
+                        “Soluna has become my sanctuary. Every class feels like a ritual — I always
+                        leave feeling grounded and renewed.”
+                    </p>
+                </article>
+
+                <article class="testi">
+                    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                        <span class="name">James</span>
+                        <span class="ago">9 days ago</span>
+                    </div>
+                    <p>
+                        “The teachers are incredible at reading the room’s energy. Hot Yoga pushes me,
+                        while Slow Flow brings me peace.”
+                    </p>
+                </article>
+
+                <article class="testi">
+                    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                        <span class="name">Tanya</span>
+                        <span class="ago">11 hours ago</span>
+                    </div>
+                    <p>
+                        “Pilates here transformed my posture and confidence. The vibe is calming but
+                        empowering.”
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="join">
+        <div class="container foot-row">
+            <div class="brand">
+                <span class="logo" aria-hidden="true"></span>
+                <div>
+                    <div style="font-weight:700;">Soluna Yoga Studio</div>
+                    <div class="subline">Balance your light and shadow</div>
+                </div>
+            </div>
+
+            <a class="back-top" href="#top" aria-label="Back to the top">
+                Back to the top <span><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
+                        viewBox="0 0 24 24">
+                        <path fill="#000"
+                            d="m17.71 11.29l-5-5a1 1 0 0 0-.33-.21a1 1 0 0 0-.76 0a1 1 0 0 0-.33.21l-5 5a1 1 0 0 0 1.42 1.42L11 9.41V17a1 1 0 0 0 2 0V9.41l3.29 3.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42" />
+                    </svg></span>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

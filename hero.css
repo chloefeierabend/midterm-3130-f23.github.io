@@ -1,0 +1,122 @@
+/* Full background hero image */
+.hero-bg {
+  position: relative;
+  background: url(images/stephanie-greene-1aB-1s4BIEo-unsplash.jpg) center 70% /
+    cover no-repeat;
+  color: white;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay tint for effect */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(172, 75, 0, 0.116) 0%,
+    rgba(40, 17, 0, 0.084) 100%
+  );
+}
+
+/* Layout container */
+.hero-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 2;
+  color: #000000;
+  padding: 80px 50px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Text styles */
+.hero-left h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  margin-bottom: 12px;
+  line-height: 1.15;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.144);
+}
+
+.hero-left .lead,
+.hero-right .lead {
+  color: #171717;
+  font-size: 1rem;
+  max-width: 36ch;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.112);
+}
+
+.cta-row {
+  margin-top: 24px;
+}
+
+/*Responsive tweaks*/
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1rem;
+    padding: clamp(56px, 12vw, 96px) 20px clamp(90px, 18vw, 140px);
+    /* padding so never collides with rest */
+  }
+
+  .hero-bg {
+    background-position: center 22%;
+  }
+
+  .hero-left .lead,
+  .hero-right .lead {
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-left h1 {
+    font-size: clamp(26px, 7.2vw, 34px);
+  }
+
+  .cta-row .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .hero-bg {
+    background-position: center 18%;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    justify-self: center;
+  }
+
+  .hero-left .lead,
+  .hero-right .lead {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .hero .img-wrap {
+    order: -1;
+  }
+}

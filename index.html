@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en" id="top">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soluna Yoga Studio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="classes.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="testimonials.css">
+    <link rel="stylesheet" href="buttons.css">
+    <style>
+        /* duplicate styles, don't know whats going on */
+        /*Responsive tweaks*/
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+                padding: clamp(56px, 12vw, 96px) 20px clamp(90px, 18vw, 140px);
+                /* padding so never collides with rest */
+            }
+
+            .hero-bg {
+                background-position: center 22%;
+            }
+
+            .hero-left .lead,
+            .hero-right .lead {
+                margin-inline: auto;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .hero-left h1 {
+                font-size: clamp(26px, 7.2vw, 34px);
+            }
+
+            .cta-row .btn {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+
+            .hero-bg {
+                background-position: center 18%;
+            }
+        }
+
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-left,
+            .hero-right {
+                justify-self: center;
+            }
+
+            .hero-left .lead,
+            .hero-right .lead {
+                margin: 0 auto;
+            }
+        }
+
+
+
+        /* Responsive */
+        @media (max-width: 980px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+            .hero .img-wrap {
+                order: -1;
+            }
+
+            /* image on top for medium/small */
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            /* cards stack */
+            .testi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 18px;
+            }
+
+            .stars-bar {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .foot-row {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav">
+            <div class="brand">
+                <span class="logo" aria-hidden="true"></span>
+                <span>Soluna Yoga Studio</span>
+            </div>
+            <nav aria-label="Primary">
+                <ul>
+                    <li><a href="#classes">Classes</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#join">Join Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-bg" id="about">
+        <div class="hero-overlay">
+            <div class="container hero-content">
+                <div class="hero-left">
+                    <h1>Balance your light<br />and shadow</h1>
+                    <p class="lead">
+                        At Soluna Yoga, we honor both energy and rest — the sun and moon within you.
+                    </p>
+                </div>
+
+                <div class="hero-right">
+                    <p class="lead">
+                        Discover classes that nurture strength, flexibility, and stillness in perfect balance.
+                    </p>
+                    <div class="cta-row">
+                        <a class="btn secondary" href="#classes">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Featured Classes -->
+    <section id="classes">
+        <div class="container">
+            <h2 class="section-title">Featured Classes</h2>
+
+            <div class="grid-3">
+                <!-- Card 1 -->
+                <article class="card">
+                    <img src="/images/christopher-campbell-RDPmcgy7Ay4-unsplash.jpg" alt="Hot Yoga">
+                    <div class="card-body">
+                        <h3>Hot Yoga</h3>
+                        <p class="muted">Come get your sweat on</p>
+                        <a href="#join" class="btn">Book a Class</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <img src="images/roxana-popovici-aY5uOJ2o96g-unsplash.jpg" alt="Pilates">
+                    <div class="card-body">
+                        <h3>Pilates</h3>
+                        <p class="muted">A great full body workout</p>
+                        <a href="#join" class="btn">Book a Class</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <img src="images/david-whipple-PktK6GuC3U4-unsplash.jpg" alt="Slow Flow">
+                    <div class="card-body">
+                        <h3>Slow Flow</h3>
+                        <p class="muted">Relax and unwind with us</p>
+                        <a href="#join" class="btn">Book a Class</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section aria-labelledby="testi-heading">
+        <div class="container">
+            <h2 id="testi-heading" class="section-title">Testimonials</h2>
+
+            <div class="stars-bar">
+                <span>Google Reviews</span>
+                <div class="stars" aria-label="5 out of 5 stars">★ ★ ★ ★ ★</div>
+                <a class="review-btn" href="#join">Review Us</a>
+            </div>
+
+            <div class="testi-grid">
+                <article class="testi">
+                    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                        <span class="name">Ashley</span>
+                        <span class="ago">11 days ago</span>
+                    </div>
+                    <p>
+                        “Soluna has become my sanctuary. Every class feels like a ritual — I always
+                        leave feeling grounded and renewed.”
+                    </p>
+                </article>
+
+                <article class="testi">
+                    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                        <span class="name">James</span>
+                        <span class="ago">9 days ago</span>
+                    </div>
+                    <p>
+                        “The teachers are incredible at reading the room’s energy. Hot Yoga pushes me,
+                        while Slow Flow brings me peace.”
+                    </p>
+                </article>
+
+                <article class="testi">
+                    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                        <span class="name">Tanya</span>
+                        <span class="ago">11 hours ago</span>
+                    </div>
+                    <p>
+                        “Pilates here transformed my posture and confidence. The vibe is calming but
+                        empowering.”
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="join">
+        <div class="container foot-row">
+            <div class="brand">
+                <span class="logo" aria-hidden="true"></span>
+                <div>
+                    <div style="font-weight:700;">Soluna Yoga Studio</div>
+                    <div class="subline">Balance your light and shadow</div>
+                </div>
+            </div>
+
+            <a class="back-top" href="#top" aria-label="Back to the top">
+                Back to the top <span><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
+                        viewBox="0 0 24 24">
+                        <path fill="#000"
+                            d="m17.71 11.29l-5-5a1 1 0 0 0-.33-.21a1 1 0 0 0-.76 0a1 1 0 0 0-.33.21l-5 5a1 1 0 0 0 1.42 1.42L11 9.41V17a1 1 0 0 0 2 0V9.41l3.29 3.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42" />
+                    </svg></span>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

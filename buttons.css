@@ -1,0 +1,61 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* space if you add icons */
+  padding: 12px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 12px; /* <- rounded rectangle (not a pill) */
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* PRIMARY (orange) — use for “Book a Class” */
+.btn.primary {
+  background: linear-gradient(135deg, #f19946, #f77e21);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+.btn.primary:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.24);
+  filter: brightness(1.03);
+}
+
+/* SECONDARY (blue) — use for “Learn More”, “Review Us”, etc. */
+.btn.secondary {
+  background: #2f6ee5;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+.btn.secondary:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.24);
+}
+
+/* LIGHT (optional) */
+.btn.light {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+.btn.light:hover {
+  background: #f6f6f6;
+}
+
+/* Sizes (optional) */
+.btn.sm {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  border-radius: 10px;
+}
+.btn.lg {
+  padding: 14px 28px;
+  font-size: 1.05rem;
+  border-radius: 14px;
+}
